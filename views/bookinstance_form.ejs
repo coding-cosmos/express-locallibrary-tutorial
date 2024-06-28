@@ -35,7 +35,7 @@
                         <label for="due_back">
                             Due when book available:
                         </label>
-                        <input type="date" id="due_back" class="form-control" name="due_back" value="<%- undefined===bookinstance ? "" : bookinstance.due_back_yyyy_mm__dd %>" >
+                        <input type="date" id="due_back" class="form-control" name="due_back" value="<%- undefined===bookinstance ? "" : bookinstance.due_back_yyyy_mm_dd %>" >
                     </div>
 
                     <div class="form-group">
@@ -44,9 +44,9 @@
                             <option value="">--Please select a status--</option>
                             <% ['Maintenance','Available' ,'Loaned','Reserved'].forEach((val)=>{ %>
                                 <% if(undefined===bookinstance || bookinstance.status != val){ %>
-                                    <option value="val"><%= val %></option>
+                                    <option value=<%= val %>><%= val %></option>
                                 <% }else{ %>
-                                    <option value="val" selected>
+                                    <option value=<%= val %> selected>
                                         <%= val %>
                                     </option>
                                 <% } %>
